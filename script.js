@@ -88,9 +88,16 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+//Variable declarations:
+let passwordLength;
+let passwordSpecialCharacters;
+let passwordNumericCharacters;
+let passwordLowerCasedCharacters;
+let passwordUpperCasedCharacters;
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
 }
 
 // Function for getting a random element from an array
@@ -100,7 +107,6 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
 }
 
 // Get references to the #generate element
