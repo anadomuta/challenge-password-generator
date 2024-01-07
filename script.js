@@ -94,7 +94,7 @@ let passwordSpecialCharacters;
 let passwordNumericCharacters;
 let passwordLowerCasedCharacters;
 let passwordUpperCasedCharacters;
-let randomCharacterFinalPoolArr = [];
+let randomCharacterPoolArray = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -149,6 +149,30 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
+
+  if (passwordSpecialCharacters) {
+    randomCharacterPoolArray.push(...specialCharacters);
+  }
+
+  if (passwordNumericCharacters) {
+    randomCharacterPoolArray.push(...numericCharacters);
+  }
+
+  if (passwordLowerCasedCharacters) {
+    randomCharacterPoolArray.push(...lowerCasedCharacters);
+  }
+
+  if (passwordUpperCasedCharacters) {
+    randomCharacterPoolArray.push(...upperCasedCharacters);
+  }
+
+  var finalPassword = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+    finalPassword += getRandom(randomCharacterPoolArray);
+  }
+
+  return finalPassword;
 }
 
 // Get references to the #generate element
