@@ -102,6 +102,10 @@ function getPasswordOptions() {
     "How many characters would you like your password to contain?"
   );
 
+  if (!passwordLength) return;
+
+  passwordLength = parseInt(passwordLength);
+
   if (isNaN(passwordLength)) {
     alert("Please input a number greater than 8.");
     getPasswordOptions();
@@ -124,12 +128,13 @@ function getPasswordOptions() {
       "Click 'OK' to confirm including uppercase characters."
     );
 
-    if (
-      passwordSpecialCharacters === false &&
-      passwordNumericCharacters === false &&
-      passwordLowerCasedCharacters === false &&
-      passwordUpperCasedCharacters === false
-    ) {
+    let atLeastOneCharacter =
+      passwordSpecialCharacters &&
+      passwordNumericCharacters &&
+      passwordLowerCasedCharacters &&
+      passwordUpperCasedCharacters;
+
+    if (!atLeastOneCharacter) {
       alert("Please select at least one character type.");
       getPasswordOptions();
     }
@@ -142,7 +147,9 @@ function getRandom(arr) {
 }
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  getPasswordOptions();
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
