@@ -102,11 +102,11 @@ function getPasswordOptions() {
     "How many characters would you like your password to contain?"
   );
 
-  if (!passwordLength) return;
+  if (passwordLength == null) return; //allows password generation exit if the user cancels the prompt
 
   passwordLength = parseInt(passwordLength);
 
-  if (isNaN(passwordLength)) {
+  if (isNaN(passwordLength) || passwordLength == "") {
     alert("Please input a number greater than 8.");
     getPasswordOptions();
   } else if (passwordLength < 8 || passwordLength > 128) {
