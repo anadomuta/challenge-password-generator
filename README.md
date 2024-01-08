@@ -36,7 +36,8 @@ In addition, the following resources were used:
 1. W3Resource Article: [JavaScript: Get a random item from an array
    ](https://www.w3resource.com/javascript-exercises/javascript-array-exercise-35.php)
 2. Tutoring session to add recursiveness in the prompts
-3. Markdown badges from [ileriayo](https://github.com/Ileriayo/markdown-badges?tab=readme-ov-file#markdown-badges)
+3. W3School Article: [Animated Buttons](https://www.w3schools.com/howto/howto_css_animate_buttons.asp)
+4. Markdown badges from [ileriayo](https://github.com/Ileriayo/markdown-badges?tab=readme-ov-file#markdown-badges)
 
 ## License
 
