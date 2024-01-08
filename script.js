@@ -88,7 +88,7 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-//Variable declarations:
+//Variable declarations
 let passwordLength;
 let passwordSpecialCharacters;
 let passwordNumericCharacters;
@@ -102,19 +102,22 @@ function getPasswordOptions() {
     "How many characters would you like your password to contain?"
   );
 
-  if (passwordLength == null) return; //allows password generation exit if the user cancels the prompt
+  if (passwordLength === null) return; //allows password generation exit if the user cancels the prompt
 
   passwordLength = parseInt(passwordLength);
 
-  if (isNaN(passwordLength) || passwordLength == "") {
+  if (isNaN(passwordLength) || passwordLength === "") {
+    //validation for numeric or empty input
     alert("Please input a number greater than 8.");
     getPasswordOptions();
   } else if (passwordLength < 8 || passwordLength > 128) {
+    // validation for password length limits
     alert(
       "The password length must be a number of characters between 8 and 128."
     );
     getPasswordOptions();
   } else {
+    // User preferences for use of special or numeric characters
     passwordSpecialCharacters = confirm(
       "Click 'OK' to confirm including special characters."
     );
@@ -127,11 +130,11 @@ function getPasswordOptions() {
     passwordUpperCasedCharacters = confirm(
       "Click 'OK' to confirm including uppercase characters."
     );
-
+    // Validation for at least one character type selected
     let atLeastOneCharacter =
-      passwordSpecialCharacters &&
-      passwordNumericCharacters &&
-      passwordLowerCasedCharacters &&
+      passwordSpecialCharacters ||
+      passwordNumericCharacters ||
+      passwordLowerCasedCharacters ||
       passwordUpperCasedCharacters;
 
     if (!atLeastOneCharacter) {
@@ -150,6 +153,7 @@ function getRandom(arr) {
 function generatePassword() {
   getPasswordOptions();
 
+  // Push user preference for character types into pool array
   if (passwordSpecialCharacters) {
     randomCharacterPoolArray.push(...specialCharacters);
   }
@@ -168,6 +172,7 @@ function generatePassword() {
 
   var finalPassword = "";
 
+  // Add random characters from pooled array based on user preferences
   for (let i = 0; i < passwordLength; i++) {
     finalPassword += getRandom(randomCharacterPoolArray);
   }
