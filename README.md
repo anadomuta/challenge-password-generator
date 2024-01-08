@@ -18,7 +18,7 @@ Once all prompts are answered, the password is generated and written to the page
 
 ## Usage
 
-The webpage can be accessed using this URL: link to follow
+The webpage can be accessed using this URL: https://anadomuta.github.io/challenge-password-generator/
 
 To generate the random password, the user can tap on the button "Generate password" and input the preferences for the length and type of characters that he prefers.
 
